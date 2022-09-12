@@ -66,11 +66,18 @@ We can further explore the dataset quantitatively by starting with the distribut
 
 We can also look into the individual distribution of objects in a given image set: 
 ![alt text](im/car.png)
+
+
 ![alt text](im/ped.png)
+
+
 ![alt text](im/cy.png)
+
 This further examplifies the imbalances nature of the dataset concerning cyclists.
 The last analysis step is to look at the distribution of brightness in images:
+
 ![alt text](im/bright.png)
+
 We see that there are outliers that are either very dim or very bright compared to the mean which can negatively affect the training performance.
 
 ### Cross validation
