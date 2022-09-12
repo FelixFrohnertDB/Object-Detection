@@ -64,6 +64,14 @@ We can further explore the dataset quantitatively by starting with the distribut
 
 ![alt text](im/class_dist.png)
 
+We can also look into the individual distribution of objects in a given image set: 
+![alt text](im/car.png)
+![alt text](im/ped.png)
+![alt text](im/cy.png)
+This further examplifies the imbalances nature of the dataset concerning cyclists.
+The last analysis step is to look at the distribution of brightness in images:
+![alt text](im/bright.png)
+We see that there are outliers that are either very dim or very bright compared to the mean which can negatively affect the training performance.
 
 ### Cross validation
 A total of 100 tfrecord instances are used to train, test and validate the algorithm. 
@@ -119,6 +127,9 @@ Analyzing the training and validation loss of the reference model shows suboptim
 The loss curves are noisy and do not decrease much. In the following, 
 the training loss is indicated in orange and the validation loss in blue.
 ![alt text](im/un.png)
+![alt text](im/un_prec.png)
+The bad loss curve and precision near zero show us that the initial default model is overfitting owing 
+to the weights not being able to generalize well across the imbalanced dataset.
 
 
 
@@ -140,9 +151,11 @@ The details of this can be found in the  "Explore augmentations.ipynb" notebook.
 Training and testing of the improved model is investigated in the following.
 
 ![alt text](im/tr.png)
+![alt text](im/tr_prec.png)
+
 
 The loss curve are now more stable and reach lower final values compared to the unaugmented model. 
-This indicates better performance.
+This indicates better performance. We are also able to achieve slightly higher precision values
 
 
 Finally, an example of the trained model classifying an image:
